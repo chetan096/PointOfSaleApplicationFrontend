@@ -1,0 +1,28 @@
+<div id='main' style="width:50%;overflow:auto;position:fixed;padding:0%" [style.height.px]="height">
+  <div class="well well-sm heading">
+    {{((url==='/orders')?'Orders':'Saved Orders')}}
+  </div>
+  <h2 *ngIf="(orders.size==0)" style="color:red">No Order saved or placed yet</h2>
+  <div *ngFor="let orderList of getValues();">
+    <div class="well well-sm date">
+      {{orderList[0].date}}
+    </div>
+    <div *ngFor="let order of orderList" class="detail">
+      <div class="well well-sm height" (click)="showOrderDetails(order.id,order.date)">
+        <div style="float:left;width:40%">
+          <i class="fa fa-circle"></i>
+          <b>#{{order.id}}</b>
+          <p>{{order.customer.username}}</p>
+        </div>
+        <span style="width:30%">{{order.time}}</span>
+        <div style="float:right;width:30%">
+          <b>US${{order.amount}}</b>
+          <p>{{(order.status=='saved')?'ON HOLD':'COMPLETE'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- <app-cartdetails [productCustomerId]="customerId" (sendCustomerIdToProduct)="getCustomerId($event)" class="hide"></app-cartdetails> -->

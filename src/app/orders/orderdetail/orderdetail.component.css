@@ -1,0 +1,19 @@
+.heading{
+    height:50px;
+    text-align:center;
+    background-color: slateblue;
+    color:whitesmoke;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.title{
+    text-align:center;
+    background-color: white;
+}
+
+.mode{
+    background-color: white;
+}
+.mode-baby{
+    border:1px;
+}

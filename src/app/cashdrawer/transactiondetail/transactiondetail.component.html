@@ -1,0 +1,31 @@
+<div style="float:right;top:0%;left:50%;position:absolute;width:50%;" [style.height.px]="height">
+  <div class="well well-sm heading">
+     Transactions Details
+  </div>
+
+  <div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Order Id</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Start Balance</th>
+          <th scope="col">Current Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+          <h2 *ngIf="(transactionDetails.length==0)" style="color:red">NO order placed yet</h2>
+        <tr *ngFor="let detail of transactionDetails">
+          <td>{{detail.orderId}}</td>
+          <td>{{detail.amount}}</td>
+          <td>{{detail.date}}</td>
+          <td>{{detail.time}}</td>
+          <td>{{detail.startBalance}}</td>
+          <td>{{detail.endingBalance}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>

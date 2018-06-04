@@ -1,0 +1,27 @@
+<div id='main' style="width:48%;overflow:auto;position:fixed;padding:0%" [style.height.px]="height">
+  <div class="well well-sm heading">
+    Cash Drawer Entries
+  </div>
+  <div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Drawer Id</th>
+          <th scope="col">Date</th>
+          <th scope="col">Start Balance</th>
+          <th scope="col">Ending Balance</th>
+          <th scope="col">Last Updated At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let drawer of cashdrawers" (click)="openDetail(drawer.date)" style="cursor:pointer">
+          <td>{{drawer.id}}</td>
+          <td>{{drawer.date}}</td>
+          <td>{{drawer.startBalance}}</td>
+          <td>{{drawer.currentBalance}}</td>
+          <td>{{drawer.lastUpdationTime}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>

@@ -1,0 +1,20 @@
+<div style="float:right;top:0%;left:50%;position:absolute;width:50%;" [style.height.px]="height">
+  <div class="cart-body">
+    <div class="well well-sm" style="background-color:slateblue;color:whitesmoke;height:10%">
+      <h3 style="text-align:center">Cart</h3>
+    </div>
+    <div class="search-section form-group">
+      <input type="text" class="form-control side" placeholder="Search Customer" (keyup)="onKey($event)" [(ngModel)]="input" />
+      <i class="search-btn fas fa-search" (click)=getCustomer()></i>
+    </div>
+    <div></div>
+    <div *ngIf="showCustomers">
+      <app-customerlist [customers]="customers" (showCartDetails)="showCartDetailsComponent($event)"></app-customerlist>
+    </div>
+    <div *ngIf="showCart">
+      <app-cartdetails [customerId]="customerId" [refresh]="refreshChild" (update)='updateCart($event)' (refreshMe)="refreshCart()"
+        (updateStock)="cartDetailAskingToUpdateStock()"></app-cartdetails>
+    </div>
+  </div>
+
+</div>

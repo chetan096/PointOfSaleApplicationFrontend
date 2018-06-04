@@ -1,0 +1,259 @@
+.wrapper {
+	width: 68em;
+}
+.heading{
+    background-color:slateblue;
+}
+.side{
+    margin-top:5px;
+    width:60%;
+    // margin-left:20%;
+    height:55px;
+	font-size: 20px;
+	display: inline-block
+}
+.hide{
+	display: none;
+}
+.changesidenav{
+	width:250px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+	margin-left: 50px;
+	cursor: pointer;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/* // Start here */
+
+
+$title-color: #222;
+$font-color: #777;
+$light-gray: #eee;
+$primary: #E91E63;
+$secondary: #42A5F5;
+
+// product
+$product-box-shadow: 0px 0px 0px 1px $light-gray;
+
+
+
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: $font-color;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+
+.product-grid {
+	width: 60em;
+	margin: 2rem auto;
+	// TODO: apply clearfix
+	
+
+	// If want a flexbox grid.
+	&.product-grid--flexbox {
+		.product-grid__wrapper {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		
+		.product-grid__title {
+			height: auto;
+			&:after { display: none; }
+		}
+	}
+	
+
+	&__wrapper {
+		margin-left: -1rem;
+		margin-right: -1rem;
+		//background: #000;
+	}
+	
+	&__product-wrapper {
+		padding: 1rem;
+		float: left;
+		width: 33.33333%;
+	}
+	
+	
+	&__product {
+		padding: 1rem;
+		// width: 33.33333%;
+		// float: left;
+		position: relative;
+		cursor: pointer;
+		background: #fff;
+		//box-shadow: $product-box-shadow;
+		border-radius: 4px;
+		
+		&:hover {
+			box-shadow: $product-box-shadow;
+			z-index: 50;
+			
+			.product-grid__extend {
+				display: block;
+			}
+		}
+	}
+	
+			
+	// product image wrapper
+	&__img-wrapper {
+		width: 100%;
+		text-align: center;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		height: 150px;
+	}
+	
+	
+		// product image
+		&__img {
+			max-width: 100%;
+			height: auto;
+			max-height: 100%;
+		}
+	
+	
+	//	product title
+	&__title {
+		margin-top: .875rem;
+		display: block;
+		font-size: 1.125em;
+		color: $title-color;
+		height: 3em;
+		overflow: hidden;
+		position: relative;
+		
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 2.4em;
+			height: 1.5em; // magic number
+			background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+			//background: red;
+		}
+	}
+	
+	&__price {
+		color: $primary;
+		font-weight: bold;
+		letter-spacing: .4px;
+	}
+	
+	
+	// extend wrapper
+	&__extend-wrapper {
+		position: relative;
+	}
+	
+	// extended elements
+	// show when hover .product-grid__product
+	&__extend {
+		display: none;
+		position: absolute;
+		padding: 0 1rem 1rem 1rem;
+		margin: .4375rem -1rem 0;
+		box-shadow: $product-box-shadow;
+		background: #fff;
+		border-radius: 0 0 4px 4px;
+		
+		&:before {
+			content: "";
+			height: .875rem;
+			width: 100%;
+			position: absolute;
+			top: -.4375rem;
+			left: 0;
+			background: #fff;
+		}
+	}
+	
+	
+	// product description	
+	&__description {
+		font-size: .875em;
+		//margin-top: .875rem;
+		margin-top: .4375rem;
+		margin-bottom: 0;
+	}
+	
+	
+	// buttons
+	&__btn {
+		display: inline-block;
+		font-size: .875em;
+		color: $font-color;
+		background: $light-gray;
+		padding: .5em .625em;
+		margin-top: .875rem;
+		margin-right: .625rem;
+		cursor: pointer;
+		border-radius: 4px;
+		
+		i.fa { margin-right: .3125rem;}
+	}
+	
+	
+	&__add-to-cart {
+		color: #fff;
+		background: $primary;
+		
+		&:hover { background: lighten($primary, 10%); }
+	}
+	
+	&__view {
+		color: $font-color;
+		background: $light-gray;
+		
+		&:hover { background: lighten($light-gray, 10%); }
+	}
+}

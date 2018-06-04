@@ -1,0 +1,30 @@
+<div style="float:right;top:0%;left:50%;position:absolute;width:48%;" [style.height.px]="height">
+
+  <div>
+    <div class="well well-sm" style="background-color:slateblue;color:whitesmoke">
+      <h3 style="text-align:center">Check Out & Payment Method</h3>
+    </div>
+    <b>Sales Executive&nbsp;&nbsp;</b>
+    <input value="Bahubali" disabled>
+    <br/>
+    <br/>
+    <div style="border:1px solid grey;height:400px">
+      <b>PAYMENT</b>
+      <br/>
+      <br/> &nbsp;&nbsp;
+      <a style="text-decoration:none;cursor:pointer" (click)="cashSelected()">
+        <i class="fa fa-check" *ngIf="cashClicked"></i>
+        <i class="fa fa-circle" *ngIf="!cashClicked"></i>&nbsp;&nbsp;Cash</a>
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      <a style="text-decoration:none;cursor:pointer" (click)="cardSelected()">
+        <i class="fa fa-circle" *ngIf="!cardClicked"></i>
+        <i class="fa fa-check" *ngIf="cardClicked"></i>&nbsp;Card</a>
+    </div>
+    <br/>
+    <div style="float:right">
+      <button class="btn btn-basic" style="margin-right:35px" (click)="setOrder('saved')">Save Order</button>
+      <button class="btn" style="background-color:slateblue;color:whitesmoke" (click)="setOrder('placed')">Place Order</button>
+    </div>
+  </div>
+
+</div>

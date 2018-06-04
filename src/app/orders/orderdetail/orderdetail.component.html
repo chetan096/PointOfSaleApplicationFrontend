@@ -1,0 +1,75 @@
+<div style="float:right;top:0%;left:50%;position:absolute;width:50%;" [style.height.px]="height">
+  <div class="well well-sm heading">
+    Order:#{{order?.id}}
+  </div>
+  <div class="well well-sm title">
+    <h2>US$ {{order?.amount}}</h2>
+    <p>Created Date:&nbsp;
+      <b>{{order?.date}}&nbsp;&nbsp;{{order?.time}}</b>
+    </p>
+    <p>Status:&nbsp;
+      <b>{{(order?.status=='saved')?'ON HOLD':'COMPLETE'}}</b>
+    </p>
+    <button class="btn btn-danger" (click)="reload()" *ngIf="(this.url=='/savedorders')">Reload</button>
+  </div>
+  <div>
+    <div class="well well-sm mode">
+      <b>Mode of Payment</b>
+    </div>
+    <p *ngIf="(order?.modeId==1)" style="margin-left:5px;">Cash Only</p>
+    <p *ngIf="(order?.modeId==2)" style="margin-left:5px;">By Card</p>
+    <p style="margin-left:5px;">Order was placed using USD</p>
+  </div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of order?.orderdetails">
+        <td>
+          <b>{{product.product.productName}}</b>
+        </td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{(product.quantity*product.price)}}</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Subtotal
+        </td>
+        <td style="color:red;" colspan="1">
+          US${{order.amount-10}}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Tax
+        </td>
+        <td style="color:red;" colspan="1">
+          US$10
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Grand Total
+        </td>
+        <td style="color:red;" colspan="1">
+          US${{order?.amount}}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          Total Paid
+        </td>
+        <td style="color:red;" colspan="1">
+          US${{order?.paidAmount}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

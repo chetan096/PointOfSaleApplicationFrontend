@@ -1,0 +1,26 @@
+
+.side{
+    width:60%;
+    margin:0 auto;
+}
+.mysearch{
+    margin-left:90px;
+}
+.search-section{
+    position: relative;
+}
+.search-btn{
+    position: absolute;
+    right: 20%;
+    top: 0%;
+    cursor: pointer;
+    /* border: 1px solid; */
+    padding: 10px 13px;
+    background: darkgray;
+    border-radius: 0px 4px 4px 0;
+}
+
+/* .cart-body{
+    height:100%;
+    overflow: auto
+} */

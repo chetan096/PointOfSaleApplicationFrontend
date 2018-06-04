@@ -1,0 +1,3 @@
+
+<app-product [customerId]="customerId" (productEmit)="productEvent($event)" ></app-product> 
+<app-cart (takeCustomerId)="getCustomerIdFromChild($event)" (updateHome)="update($event)" (updateStock)="askProductChildToChangeStock()"></app-cart>

@@ -1,0 +1,26 @@
+.heading{
+    height:50px;
+    text-align:center;
+    background-color: slateblue;
+    color:whitesmoke;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.date{
+    height:40px;
+    background-color:cornflowerblue;
+    color:whitesmoke;
+    font-size: 20px;
+    margin-bottom: 0%;
+}
+.detail{
+    height:50px;
+    margin-bottom: 0%;
+    cursor: pointer;
+    /* background-color:white; */
+}
+.height{
+    height:50px;
+    background-color: white;
+}

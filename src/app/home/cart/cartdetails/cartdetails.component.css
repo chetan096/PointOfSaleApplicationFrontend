@@ -1,0 +1,39 @@
+.cart-footer{
+    background-color:slateblue;
+    color:whitesmoke;    
+    bottom: 0%;
+    width: 100%;
+    position:fixed;
+    margin-bottom: 0%;
+    height:10%;
+}
+
+.money{
+    color:whitesmoke;
+    font-size:20px;
+
+ }
+.money-details{
+    margin-left: 33%;
+    
+}
+ 
+.checkout-option{
+    position: fixed;
+    width: 100%;
+    background: slateblue;
+    bottom: 0%;
+    padding: 10px 0;
+    font-size:20px;
+    color:white;
+}
+
+.checkout-option span:first-child{
+    width: 45%;
+}
+.checkout-option span:last-child{
+    width: 45%;
+    color: white;
+}
+
+

@@ -1,0 +1,21 @@
+<div class="table-responsive">
+  <table class="table" *ngIf="(customers!=null&&customers.length!=0)">
+    <thead>
+      <tr>
+
+        <th style="text-align:center">Username</th>
+        <th style="text-align:center">Code</th>
+        <th style="text-align:center">Email</th>
+        <th style="text-align:center">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let customer of customers">
+      <tr (click)="openCart(customer.id)" style="cursor: pointer">
+        <td style="text-align:center">{{customer.username}}</td>
+        <td style="text-align:center">{{customer.customerCode}}</td>
+        <td style="text-align:center">{{customer.email}}</td>
+        <td style="text-align:center">{{customer.phone_no}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
